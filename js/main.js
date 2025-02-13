@@ -330,8 +330,36 @@ Version:	1.1
 	
 })(jQuery);
 
-document.querySelector('a[href="#welcome"]').addEventListener('click', function(e) {
+
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.faq-question').forEach(item => {
+	  item.addEventListener('click', () => {
+		const answer = item.nextElementSibling;
+		const arrow = item.querySelector('.arrow');
+  
+		if (answer.style.display === 'block') {
+		  answer.style.display = 'none';
+		  arrow.classList.remove('up');
+		} else {
+		  answer.style.display = 'block';
+		  arrow.classList.add('up');
+		}
+	  });
+	});
+  });
+  
+
+
+document.querySelector('a[href="#improtantBP"]').addEventListener('click', function(e) {
     e.preventDefault();
-    document.querySelector('#welcome').scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#importantBP').scrollIntoView({ behavior: 'smooth' });
+});
+document.querySelector('a[href="#difficult"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#difficult').scrollIntoView({ behavior: 'smooth' });
+});
+document.querySelector('a[href="#good"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#good').scrollIntoView({ behavior: 'smooth' });
 });
 

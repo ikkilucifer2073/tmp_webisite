@@ -1011,7 +1011,7 @@ body{
 .why-choose .choose-right{
 	height:100%;
 	width:100%;
-	background-image:url('img/video-bg.jpg');
+	/* background-image:url('img/video-bg.jpg'); */
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
@@ -4171,3 +4171,50 @@ body{
 /*=========================
 	End Footer CSS
 ===========================*/
+
+/*START FAQ*/
+.faq-section {
+	max-width: 800px;
+	margin: 0 auto;
+	font-family: 'Arial', sans-serif;
+  }
+  
+  .faq-item {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	overflow: hidden;
+  }
+  
+  .faq-question {
+	padding: 15px 20px;
+	background-color: #f9f9f9;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: bold;
+  }
+  
+  .faq-answer {
+	display: none;
+	padding: 15px 20px;
+	background-color: #fff;
+	color: #555;
+  }
+  
+  .arrow {
+	border: solid black;
+	border-width: 0 2px 2px 0;
+	padding: 5px;
+	transform: rotate(45deg);
+	transition: transform 0.2s ease;
+  }
+  
+  .arrow.up {
+	transform: rotate(-135deg);
+  }
+/*END FAQ*/
+
+
+
