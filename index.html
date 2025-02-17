@@ -43,7 +43,34 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">
-		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				function loadPage(url) {
+					fetch(url)
+						.then(response => response.text())
+						.then(html => {
+							let parser = new DOMParser();
+							let doc = parser.parseFromString(html, "text/html");
+							let newContent = doc.querySelector("#content"); // 只載入 `#content` 內的內容
+							document.querySelector("#content").innerHTML = newContent.innerHTML;
+							window.history.pushState(null, "", "/"); // 永遠讓網址只顯示 cardioring.com.tw
+						});
+				}
+			
+				document.body.addEventListener("click", function(event) {
+					let target = event.target.closest("a"); // 確保點擊的是超連結
+					if (target && target.href.includes(window.location.origin)) {
+						event.preventDefault();
+						loadPage(target.href);
+					}
+				});
+			
+				window.addEventListener("popstate", function () {
+					location.reload(); // 允許返回上一頁時重新載入頁面
+				});
+			});
+		</script>
+			
 			
     </head>
     <body>
