@@ -41,25 +41,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				// 隱藏所有 .html
-				if (window.location.pathname.includes(".html")) {
-					let cleanURL = window.location.pathname.replace(/\.html$/, "");
-					window.history.replaceState(null, "", cleanURL);
-				}
-			
-				// 讓點擊連結時網址保持不變或加上隨機字串
-				document.body.addEventListener("click", function(e) {
-					let target = e.target.closest("a"); // 找到最近的 <a> 標籤
-					if (target && target.href.includes(window.location.origin)) {
-						e.preventDefault(); // 阻止跳轉
-						let randomString = Math.random().toString(36).substring(7); // 生成隨機字串
-						window.history.pushState(null, "", "/" + randomString);
-					}
-				});
-			});
-		</script>
+		
     </head>
     <body>
 	
